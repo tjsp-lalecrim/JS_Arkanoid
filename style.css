@@ -1,7 +1,6 @@
 body {
     background-color: #f0f0f0;
     margin: 20px;
-    /* Add margin to the body */
     overflow: hidden;
 }
 
@@ -15,7 +14,6 @@ header {
 #container {
     text-align: center;
     margin-top: 20px;
-    /* Add margin to the container */
 }
 
 canvas {
@@ -24,19 +22,18 @@ canvas {
     margin: 0 auto;
     background-color: #f0f0f0;
     margin-top: 20px;
-    /* Add margin to the canvas */
 }
 
 #resetButton {
-    margin-top: 20px;
-    /* Add margin to the reset button */
+    margin: 20px auto;
+    /* Center reset button horizontally */
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
