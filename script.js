@@ -9,7 +9,7 @@ let dy = 0;
 
 const paddleHeight = 10;
 const paddleWidth = 75;
-let paddleX = (canvas.width - paddleWidth) / 2; // Initial position centered
+let paddleX = (canvas.width - paddleWidth) / 2;
 
 const brickRowCount = 5;
 const brickColumnCount = 5;
@@ -157,9 +157,11 @@ function displayMessage(message, win) {
     ctx.fillStyle = win ? "green" : "red";
     ctx.textAlign = "center";
     ctx.fillText(message, canvas.width / 2, canvas.height / 2);
+    showResetButton(); // Call showResetButton after setting gameOver
 }
 
 function resetGame() {
+    gameOver = false; // Reset gameOver state
     score = 0;
     x = canvas.width / 2;
     y = canvas.height - 30;
@@ -167,8 +169,16 @@ function resetGame() {
     dy = 0;
     paddleX = (canvas.width - paddleWidth) / 2; // Center paddle
     gameStarted = false;
-    gameOver = false;
     bricks.forEach(row => row.forEach(brick => brick.status = 1));
+    showResetButton(); // Call showResetButton after resetting the game
+}
+
+function showResetButton() {
+    if (gameOver) {
+        document.getElementById("resetButton").style.display = "block";
+    } else {
+        document.getElementById("resetButton").style.display = "none";
+    }
 }
 
 setInterval(draw, 10);
